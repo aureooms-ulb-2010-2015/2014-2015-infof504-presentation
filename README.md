@@ -25,8 +25,8 @@ the minima set.
     1. Let *x* be one of the candidates and decide whether it
        is dominated by one of the minima elements in *M* using predicate *<*.
     2. If so, discard *x*.
-    3. Otherwise, scan the candidates for a minimum according to *<*. If at this point the
-       candidate set is not empty, at least one of its elements must be a
+    3. Otherwise, scan the candidates for a minimum according to *<*. At this point the
+       candidate set is nonempty and at least one of its elements must be a
        minimum. We scan the candidate list to find this element.
       1. For each other candidate *y* than *x*:
         1. If *x < y*, discard *y* from *S*.
@@ -99,8 +99,8 @@ These assumptions can be guaranteed using *d LP(d,n)* time. See [2] for details.
     1. Let *h* be one of the candidates and decide whether it
        is redundant with respect to the set of half-spaces *M*.
     2. If so, discard *h*.
-    3. Otherwise, scan the candidates for a nonredundant half-space. If at this point the
-       candidate set is not empty, at least one of its elements must be
+    3. Otherwise, scan the candidates for a nonredundant half-space. At this point the
+       candidate set is nonempty and at least one of its elements must be
        nonredundant. We scan the candidate list to find this element.
 
   3. Output *M*.
