@@ -82,7 +82,7 @@ We make several assumptions on the input:
   2. No equality is a positive multiple of another one.
   3. We are given a vertex *z* in the interior of the polyhedron defined by *H*.
 
-These assumptions can be guaranteed using *d LP(d,n)* time. See [2] for details.
+These assumptions can be guaranteed using *d LP(d,n)* processing time. See [2] for details.
 
 #### Pseudo Code
 
