@@ -4,8 +4,8 @@
 
 An output sensitive algorithm is an algorithm whose complexity depends on the
 size of the output. Thus, for a fixed instance size *n*, the same algorithm can
-have different running times. A classical example of a problem for which output
-sensitive algorithms exists is the computation of the convex hull of a finite
+have different running times. A classical example of a problem solved by output
+sensitive algorithms is the computation of the convex hull of a finite
 set of points in *R^d*.
 
 ### A canonical output sensitive algorithm
