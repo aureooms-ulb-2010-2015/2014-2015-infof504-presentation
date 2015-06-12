@@ -1,10 +1,10 @@
-# Combinatorial Redundancy Algorithms
+# Combinatorial Redundancy Detection
 
 ## Some background on output sensitive algorithms
 
 An output sensitive algorithm is an algorithm whose complexity depends on the
 size of the output. Thus, for a fixed instance size *n*, the same algorithm can
-have different running time. A classical example of problem for which output
+have different running time. A classical example of a problem for which output
 sensitive algorithms exists is the computation of the convex hull of a finite
 set of points in *R^d*.
 
@@ -49,11 +49,37 @@ during the execution of the algorithm.
 For step **2.3**, for each executed loop we
 obtain a new minimum and increase the size of the constructed minima set by
 *1*, hence there are at most *A* loops execution, each of which loops over at
-most *n* elements. Step **2.3** uses thus at most *n.A* comparisons.
+most *n* elements. Step **2.3** uses thus at most *nA* comparisons.
 
 The algorithm can be implemented so that it runs in place. The running time is
 dominated by the comparison time and thus the
-complexity of this algorihtm is *O(n.A)*.
+complexity of this algorihtm is *O(nA)*.
+
+
+## Combinatorial Redundancy Detection
+
+We want to solve the following problem:
+
+> Given a set *H* of *n* half-spaces in *R^d* we want to filter out all half-spaces
+*h* in *H* such that the intersection of all half-spaces in *H* does not change
+if we remove *h* from *H*.
+
+### Naive Algorithm
+
+A simple way of solving the above problem is to solve *n* linear programs.
+For each *h* we consider the set of linear constraints defined by the half-spaces in
+*H \ h* and solve a linear program in *d* variables with these constraints and
+with an objective function orthogonal to the direction of half-space *h*. If
+the objective value of the optimal solution of this linear program
+is different from the objective value of the optimal solution of the same
+linear program with the addition of a new linear constraint defined by half-space
+*h* then *h* is nonredundant. Otherwise, *h* is redundant.
+
+Let *LP(d,n)* denote the complexity of solving a linear program in *d*
+variables with *n* constraints, then the complexity of this algorithm is
+*n LP(d,n)*.
+
+### Clarkson Algorithm
 
 ## References
 
