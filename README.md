@@ -1,2 +1,1 @@
-# infof504-presentation
-Combinatorial Redundancy Algorithms
+# Combinatorial Redundancy Algorithms
