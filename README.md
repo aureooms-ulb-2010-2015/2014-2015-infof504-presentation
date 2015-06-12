@@ -25,7 +25,7 @@ the minima set.
     1. Let *x* be one of the candidates and decide whether it
        is dominated by one of the minima elements in *M* using predicate *<*.
     2. If so, discard *x*.
-    3. Otherwise, scan the candidates for a minimum. If at this point the
+    3. Otherwise, scan the candidates for a minimum according to *<*. If at this point the
        candidate set is not empty, at least one of its elements must be a
        minimum. We scan the candidate list to find this element.
       1. For each other candidate *y* than *x*:
