@@ -113,7 +113,9 @@ a nonredundant half-space or discard one.
 
 For step **2.iii**, we use the following *rayshoot* procedure which given a set of
 hyperplanes *H*, a vertex *z* and a direction *r* finds the first hyperplane
-from *H* to meet the ray shot from *z* in direction *r*. Here we give a
+from *H* to meet the ray shot from *z* in direction *r*. For our use case,
+we choose _r = x* - z_ and hence the rayshoot procedure finds a nonredundant half-space.
+Here we give a
 simplified version of the algorithm that assumes a candidate solution is already
 known, which is the case for us. In the description below, *h* denotes this
 candidate solution and *w >= 0* is the scalar such that *z + wr* lies on *h*.
