@@ -38,7 +38,7 @@ the minima set.
 
   3. Output *M*.
 
-#### Running-time Analysis
+#### Run-time Analysis
 
 For step **2.i**, at most *n.A* comparisons are used since we compare each element
 of *S* with each elements of the minima set which is of cardinality at most *A*
@@ -108,7 +108,7 @@ These assumptions can be guaranteed using *d LP(d,n)* time. See [2] for details.
 Note the similarity between this algorithm and the minima finding algorithm we
 introduced earlier.
 
-#### Running-time Analysis
+#### Run-time Analysis
 
 For step **2.i**, we solve a linear program in *d* variables with at most
 *s+1* constraints. In the case where *h* is nonredundant with respect to *M* we
