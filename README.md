@@ -28,7 +28,7 @@ the minima set.
     3. Otherwise, scan the candidates for a minimum according to *<*. At this point the
        candidate set is nonempty and at least one of its elements must be a
        minimum. We scan the candidate list to find this element.
-      1. For each other candidate *y* than *x*:
+      1. For each candidate *y* that is not *x*:
         1. If *x < y*, discard *y* from *S*.
         2. Else, if *y < x*, we can discard *x* from *S* and let *y*
            be the new *x*.
