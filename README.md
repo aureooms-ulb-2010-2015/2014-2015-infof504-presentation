@@ -27,14 +27,8 @@ the minima set.
     2. If so, discard *x*.
     3. Otherwise, scan the candidates for a minimum according to *<*. At this point the
        candidate set is nonempty and at least one of its elements must be a
-       minimum. We scan the candidate list to find this element.
-      1. For each candidate *y* that is not *x*:
-        1. If *x < y*, discard *y* from *S*.
-        2. Else, if *y < x*, we can discard *x* from *S* and let *y*
-           be the new *x*.
-        3. Otherwise, do nothing.
-
-      2. Let *M <- M union {x}* and *S <- S \ {x}*.
+       minimum. We scan the candidate list to find this element, remove it from *S*
+       and put it in *M*.
 
   3. Output *M*.
 
@@ -101,7 +95,8 @@ These assumptions can be guaranteed using *d LP(d,n)* time. See [2] for details.
     2. If so, discard *h*.
     3. Otherwise, scan the candidates for a nonredundant half-space. At this point the
        candidate set is nonempty and at least one of its elements must be
-       nonredundant. We scan the candidate list to find this element.
+       nonredundant. We scan the candidate list to find this element, remove it from *H*
+       and put it in *M*.
 
   3. Output *M*.
 
