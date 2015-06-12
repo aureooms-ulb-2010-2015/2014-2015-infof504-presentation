@@ -12,7 +12,6 @@ set of points in *R^d*.
 
 Clarkson [1] gives an output sensitive algorithm to find the minima
 set of a set of elements according to some partial order.
-
 This algorithm uses at most *2nA* comparisons where *A* is the cardinality of
 the minima set.
 
