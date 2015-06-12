@@ -42,14 +42,14 @@ the minima set.
 
 ### Running-time Analysis
 
-For step **2.1**, at most *n.A* comparisons are used since we compare each element
+For step **2.i**, at most *n.A* comparisons are used since we compare each element
 of *S* with each elements of the minima set which is of cardinality at most *A*
 during the execution of the algorithm.
 
-For step **2.3**, for each executed loop we
+For step **2.iii**, for each executed loop we
 obtain a new minimum and increase the size of the constructed minima set by
 *1*, hence there are at most *A* loops execution, each of which loops over at
-most *n* elements. Step **2.3** uses thus at most *n.A* comparisons.
+most *n* elements. Step **2.iii** uses thus at most *n.A* comparisons.
 
 The algorithm can be implemented so that it runs in place. The running time is
 dominated by the comparison time and thus the
