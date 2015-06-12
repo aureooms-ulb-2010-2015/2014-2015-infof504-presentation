@@ -24,14 +24,14 @@ the minima set.
   1. Let *M* be the empty set.
   2. While there are candidate elements left in *S*:
     1. Let *x* be one of the candidates and decide whether it
-       is dominated by one of the minima elements in *M*.
+       is dominated by one of the minima elements in *M* using predicate *<*.
     2. If so, discard *x*.
     3. Otherwise, scan the candidates for a minimum. If at this point the
        candidate set is not empty, at least one of its elements must be a
        minimum. We scan the candidate list to find this element.
       1. For each other candidate *y* than *x*:
-        1. If *x* precedes *y*, discard *y* from *S*.
-        2. Else, if *y* precedes *x*, we can discard *x* from *S* and let *y*
+        1. If *x < y*, discard *y* from *S*.
+        2. Else, if *y < x*, we can discard *x* from *S* and let *y*
            be the new *x*.
         3. Otherwise, do nothing.
 
