@@ -1,4 +1,73 @@
 \section{Clarkson's Algorithm}
 \begin{frame}\frametitle{\insertsection}\justifying
+\begin{ebox}{Assumptions}
+These assumptions can be guaranteed using \(d\cdot\LP{}(d,n)\) time
+\cite{fukuda:2015}.
+\begin{itemize}
+\item[{\color{SpringGreen4}1.}] The polyhedron defined by \(H\) is full-dimensional.
+\item[{\color{SpringGreen4}2.}] No inequality is a positive multiple of another one.
+\item[{\color{SpringGreen4}3.}] We are given a vertex \(z\) in the interior of the polytope defined by \(H\).
+\end{itemize}
+\end{ebox}
+\begin{algo}[(Clarkson's algorithm)]
+\item[input] \((H, z)\)
+\item[1.] Let \(M\) be the empty set.
+\item[2.] While \(H \neq \emptyset\)
+\item[2.1.] Let \(h \in H\), decide whether \(h\) is redundant w.r.t. \(M\).
+\item[2.2.] If so, \(H \gets H \setminus \enum{h}\).
+\item[2.3.] Otherwise, use \(h\) to find a \(h^* \in H\) such that \(h^*\) is
+nonredundant w.r.t. \(H\). \(H \gets H \setminus \enum{h^*}, M
+\gets M \cup \enum{h^*}\).
+\item[3.] Output \(M\).
+\end{algo}
+\end{frame}
 
+\begin{frame}\frametitle{\insertsection}\justifying
+\begin{ex}[(Finding \(h^*\))]
+\begin{center}
+\psset{unit=.05cm}
+\begin{pspicture}(0,100)(100,0)
+% polytope
+\pspolygon*[linecolor=MediumOrchid2!50!white](75,80)(60,20)(38.5,25.5)(33,47)
+
+
+% half-spaces (hyperplane + direction)
+
+\psset{linecolor=black!20!white}
+\psline(0,90)(100,90)
+\psline{<-}(85,85)(85,90)
+\psline(45,0)(20,100)
+\psline{->}(36,37)(41,38.25)
+\only<3->{\psset{linecolor=violet}}
+\psline(0,20)(100,100)
+\psline{->}(50,60)(54,55)
+\psset{linecolor=black}
+
+\psset{linecolor=blue}
+\uput{2}[0](100,80){{\color{blue}\(h\)}}
+\psline(0,80)(100,80)
+\psline{<-}(85,75)(85,80)
+\psset{linecolor=black}
+
+\only<3->{
+\uput{2}[180](0,20){{\color{violet}\(h^*\)}}
+}
+\psset{linecolor=black}
+\psline(0,35)(100,10)
+\psline{->}(49,23)(50.3,28)
+\psline(55,0)(80,100)
+\psline{<-}(58,33.75)(63,32.5)
+
+\only<2->{\psline[linestyle=dashed,dash=3pt 2pt](52,40)(52,80)}
+
+\psdots(52,40)
+\uput{2}[0](52,40){\(z\)}
+\only<2->{
+\psdots(52,80)
+\uput{2}[0](52,80){\(x^*\)}
+}
+\end{pspicture}
+\end{center}
+
+\end{ex}
 \end{frame}

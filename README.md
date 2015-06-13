@@ -79,7 +79,7 @@ nonredundant half-spaces is small relative to *n*.
 We make several assumptions on the input:
 
   1. The polyhedron defined by *H* is full-dimensional.
-  2. No equality is a positive multiple of another one.
+  2. No inequality is a positive multiple of another one.
   3. We are given a vertex *z* in the interior of the polyhedron defined by *H*.
 
 These assumptions can be guaranteed using *d LP(d,n)* processing time. See [2] for details.
@@ -134,7 +134,7 @@ The complexity of the rayshoot algorithm is *O(nd)*. After each execution of
 step **2.iii** we find a new nonredundant half-space and thus there are at most
 *s* such steps.
 
-The total comlexity of the algorithm is thus *O(n LP(d,s) + snd)*.
+The total complexity of the algorithm is thus *O(n LP(d,s) + snd)*.
 
 ### Combinatorial Redundancy Detection
 
