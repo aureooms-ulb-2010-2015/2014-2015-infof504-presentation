@@ -1,4 +1,19 @@
 \section{Canonical Output-sensitive Algorithm}
 \begin{frame}\frametitle{\insertsection}\justifying
-
+\begin{probl}[Minima set]
+Given a set \(S\) and a partial order \(\prec\) compute the set \(M \subseteq S\)
+such that for all \(x \in S\) either \(x \in M\) or there exists a \(m \in M\)
+such that \(m \prec x\).
+\end{probl}
+\begin{algo}[(\citet*{clarkson:1994})]
+\item[input] \((S, \prec)\)
+\item[1.] Let \(M\) be the empty set.
+\item[2.] While \(S \neq \emptyset\)
+\item[2.1.] Let \(x \in S\), decide whether \(m \prec x\) for some \(m \in M\).
+\item[2.2.] If so, \(S \gets S \setminus \enum{x}\).
+\item[2.3.] Otherwise, use \(x\) to find a \(x^* \in S\) such that \(x^*
+	\preceq y\) for all \(y \in S \cup M\). \(S \gets S \setminus \enum{x^*}, M
+	\gets M \cup \enum{x^*}\).
+\item[3.] Output \(M\).
+\end{algo}
 \end{frame}
