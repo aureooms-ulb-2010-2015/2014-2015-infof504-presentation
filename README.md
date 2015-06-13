@@ -1,16 +1,16 @@
 # Combinatorial Redundancy Detection
 
-## Some background on output sensitive algorithms
+## Some background on output-sensitive algorithms
 
-An output sensitive algorithm is an algorithm whose complexity depends on the
+An output-sensitive algorithm is an algorithm whose complexity depends on the
 size of the output. Thus, for a fixed instance size *n*, the same algorithm can
 have different running times. A classical example of a problem solved by output
 sensitive algorithms is the computation of the convex hull of a finite
 set of points in *R^d*.
 
-### A canonical output sensitive algorithm
+### A canonical output-sensitive algorithm
 
-Clarkson [1] gives an output sensitive algorithm to find the minima
+Clarkson [1] gives an output-sensitive algorithm to find the minima
 set of a set of elements according to some partial order.
 This algorithm uses at most *2nA* comparisons where *A* is the cardinality of
 the minima set.
