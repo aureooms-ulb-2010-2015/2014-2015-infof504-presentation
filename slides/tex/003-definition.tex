@@ -5,6 +5,7 @@ Given a set \(H = \enum{h_1,\ldots,h_n}\) of \(n\) half-spaces in \(\R^d\) we
 want to compute the smallest set \(H^* = \enum{h_1^*,\ldots,h_s^*} \subseteq H\) such
 that \(\bigcap_{h^* \in H^*} h^* = \bigcap_{h \in H} h\).
 \end{probl}
+\pause
 \begin{ex}
 \begin{center}
 \psset{unit=.05cm}
@@ -13,12 +14,12 @@ that \(\bigcap_{h^* \in H^*} h^* = \bigcap_{h \in H} h\).
 \pspolygon*[linecolor=MediumOrchid2!50!white](75,80)(60,20)(38.5,25.5)(33,47)
 
 % half-spaces (hyperplane + direction)
-\only<2->{\psset{linecolor=red}}
+\only<3->{\psset{linecolor=red}}
 \psline(0,80)(100,80)
 \psline{<-}(85,85)(85,90)
 \psline(0,90)(100,90)
 \psline{<-}(85,75)(85,80)
-\only<2->{\psset{linecolor=green}}
+\only<3->{\psset{linecolor=green}}
 \psline(55,0)(80,100)
 \psline{->}(49,23)(50.3,28)
 \psline(45,0)(20,100)
