@@ -61,7 +61,7 @@ if we remove *h* from *H*.
 A simple way of solving the above problem is to solve *n* linear programs.
 For each *h* we consider the set of linear constraints defined by the half-spaces in
 *H \ h* and solve a linear program in *d* variables with these constraints and
-with an objective function orthogonal to the direction of half-space *h*. If
+with an objective function whose gradient is the inverse of the direction of half-space *h*. If
 the objective value of the optimal solution of this linear program
 is different from the objective value of the optimal solution of the same
 linear program with the addition of a new linear constraint defined by half-space
