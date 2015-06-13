@@ -1,0 +1,37 @@
+\section{Problem Definition}
+\begin{frame}\frametitle{\insertsection}\justifying
+\begin{probl}[\(H\)-redundancy removal]
+Given a set \(H = \enum{h_1,\ldots,h_n}\) of \(n\) half-spaces in \(\R^d\) we
+want to compute the smallest set \(H^* = \enum{h_1^*,\ldots,h_s^*} \subseteq H\) such
+that \(\cap_{h^* \in H^*} h^* = \cap_{h \in H} h\).
+\end{probl}
+\begin{ex}
+\begin{center}
+\psset{unit=.05cm}
+\begin{pspicture}(0,100)(100,0)
+% polytope
+\pspolygon*[linecolor=MediumOrchid2!50!white](75,80)(60,20)(38.5,25.5)(33,47)
+
+% hyperplanes
+\only<2->{\psset{linecolor=red}}
+\psline(0,80)(100,80)
+\psline(0,90)(100,90)
+\only<2->{\psset{linecolor=green}}
+\psline(55,0)(80,100)
+\psline(45,0)(20,100)
+\psline(0,20)(100,100)
+\psline(0,35)(100,10)
+
+\psset{linecolor=black}
+% directions
+\psline{->}(36,37)(41,38.25)
+\psline{<-}(58,33.75)(63,32.5)
+\psline{->}(49,23)(50.3,28)
+\psline{->}(50,60)(54,55)
+\psline{<-}(85,75)(85,80)
+\psline{<-}(85,85)(85,90)
+
+\end{pspicture}
+\end{center}
+\end{ex}
+\end{frame}
