@@ -1,4 +1,4 @@
-# Combinatorial Redundancy Detection
+# Output-sensitive *H*-Redundancy Removal
 
 ## Some background on output-sensitive algorithms
 
@@ -48,7 +48,7 @@ dominated by the comparison time and thus the
 complexity of this algorihtm is *O(nA)*.
 
 
-## Combinatorial Redundancy Detection
+## *H*-Redundancy Removal
 
 We want to solve the following problem:
 
@@ -136,9 +136,36 @@ step **2.iii** we find a new nonredundant half-space and thus there are at most
 
 The total comlexity of the algorithm is thus *O(n LP(d,s) + snd)*.
 
+### Combinatorial Redundancy Detection
+
+Fukuda et al. [3] show that is possible to solve *H*-redundancy removal given
+only the signs of a linear program dictionary
+(*n* constraints in *n + d* dimension where *n* are slack variables)
+encoding the set of half-spaces to consider.
+
+They prove that there exists a redundancy certificate for each redundant
+half-space. Similarly, they prove that there exists a nonredundancy certificate
+for each nonredundant half-space.
+
+The complexity of this new algorithm is
+
+> R(n,d,s) = O(d n s^(d-1) LP(d,s) + d s^d LP(d,n))
+
+The algorithm is simpler in the case of general position
+
+> R(n,d,s) = O(n LP(d,s) + s LP(d,n))
+
+which for small *s* is similar to the complexity of Clarkson's algorithm.
+
+Moreover the algorithm only needs a combinatorial encoding of the
+set of half-spaces. This property allows the algorithm to generalize to other
+combinatorial structures.
+
+
 ## References
 
   - [1] CLARKSON, Kenneth L. More output-sensitive geometric algorithms. In :
 *Foundations of Computer Science, 1994 Proceedings., 35th Annual Symposium on.*
 IEEE, 1994. p. 695-702.
   - [2] [Lecture: Polyhedral Computation, Spring 2015](http://www-oldurls.inf.ethz.ch/personal/fukudak/lect/pclect/notes2015/PolyComp2015.pdf)
+  - [3] FUKUDA, Komei, GÄRTNER, Bernd, et SZEDLÁK, May. Combinatorial Redundancy Detection. *arXiv preprint arXiv:1412.1241*, 2014.
