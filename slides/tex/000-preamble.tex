@@ -1,0 +1,11 @@
+\documentclass[10pt,xcolor=x11names,dvipsnames,hyperref={colorlinks=false,breaklinks=true,bookmarks=true}]{beamer}
+\setcounter{errorcontextlines}{99999}
+\usepackage{stylesheet}
+\pdfstringdefDisableCommands{%
+  \renewcommand*{\insertframenumber}{%
+    \theframenumber-%
+    \the\numexpr\value{page}-\beamer@framestartpage+1\relax
+  }%
+}
+\begin{document}
+

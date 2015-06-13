@@ -1,0 +1,180 @@
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage[english]{babel}
+
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage[compatibility=false]{caption}
+\captionsetup[figure]{labelformat=empty,font={footnotesize}}
+\usepackage{pstricks,pstricks-add}
+
+% ALGORITHMS
+\usepackage{changepage}
+\newcommand\step[1]{%
+	\textbf{#1}%
+}
+
+\newenvironment{steps}%
+{%
+\vspace*{0.35cm}%
+\begin{adjustwidth}{0.3cm}{0cm}%
+\begin{description}%
+}
+{%
+\end{description}%
+\end{adjustwidth}%
+\vspace*{0.0cm}%
+\vrule width 0pt
+}
+
+
+% FONT ADJUSTMENT
+\renewcommand{\rmdefault}{lmr}
+\renewcommand{\sfdefault}{lmss}
+
+% NEW COLORS
+\xdefinecolor{prussianblue}{RGB}{0,57,96}
+
+% NEW COMMANDS
+\newcommand\bblue[1]{\textbf{\color{prussianblue}#1}}
+\newcommand\bred[1]{\textbf{\color{Red3}#1}}
+\newcommand\bgreen[1]{\textbf{\color{SpringGreen4}#1}}
+
+% THEME
+\usecolortheme{crane}
+\usefonttheme{default}
+\setbeamertemplate{title page}[default][rounded=true,shadow=false,colsep=-4bp]
+\setbeamercolor{title}{fg=white,bg=prussianblue}
+\setbeamercolor{frametitle}{fg=white,bg=prussianblue}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamertemplate{frametitle}
+{\vskip-1ex\leavevmode\hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=.08\paperheight,dp=1ex]{frametitle}%
+    \raggedright\hspace*{5mm}\thesection.\;\;\insertframetitle
+  \end{beamercolorbox}}}
+
+\setbeamertemplate{frametitle continuation}{(\insertcontinuationcountroman)}
+\setbeamercolor{structure}{fg=black}
+\setbeamertemplate{navigation symbols}{}
+
+% BOXES
+\newenvironment{ebox}[1]{\tcolorbox[skin=enhanced,oversize,noparskip,breakable,left=3mm,right=3mm,top=1mm,bottom=1mm,
+    colback=SpringGreen4!3!White,colframe=SpringGreen4,title={\large #1}]}{\justifying\endtcolorbox} %lightgreen
+\newenvironment{abox}[1]{\tcolorbox[skin=enhanced,oversize,noparskip,breakable,left=3mm,right=3mm,top=1mm,bottom=1mm,
+    colback=Red3!3!White,colframe=Red3,title={\large #1}]}{\justifying\endtcolorbox}
+\newenvironment{dbox}[1]{\tcolorbox[skin=enhanced,oversize,noparskip,breakable,left=3mm,right=3mm,top=1mm,bottom=1mm,
+    colback=prussianblue!3!White,colframe=prussianblue,title={\large #1}]}{\justifying\endtcolorbox} %prussianblue!20!White
+\newenvironment{albox}[1]{\tcolorbox[skin=enhanced,oversize,noparskip,left=3mm,right=3mm,top=-1mm,bottom=-1mm,
+    colback=orange!3!white,colframe=orange,title={\large #1}]}{\justifying\endtcolorbox}
+
+\newenvironment{defn}[1][]{\begin{dbox}{Definition #1}}{\end{dbox}}
+\newenvironment{rem}{\begin{dbox}{Remark}}{\end{dbox}}
+\newenvironment{lem}[1][]{\begin{abox}{Lemma #1}}{\end{abox}}
+\newenvironment{thm}[1][]{\begin{abox}{Theorem #1}}{\end{abox}}
+\newenvironment{algo}[1][]{\begin{albox}{Algorithm #1}\begin{steps}}{\end{steps}\end{albox}}
+\newenvironment{cor}[1][]{\begin{abox}{Corollary #1}}{\end{abox}}
+\newenvironment{probl}[1][]{\begin{abox}{#1}}{\end{abox}}
+\newenvironment{prop}[1][]{\begin{abox}{Proposition #1}}{\end{abox}}
+\newenvironment{ex}[1][]{\begin{ebox}{Example #1}}{\end{ebox}}
+
+\def\proof{\noindent{\color{Red3}\large Proof.}\;\;\ignorespaces}
+\def\endproof{\qedhere\hfill$\color{Red3}\blacksquare$}
+
+% BASELINESTRETCH
+\parskip 3pt
+\renewcommand{\baselinestretch}{1.2}
+\g@addto@macro\normalsize{
+\setlength{\abovedisplayskip}{1mm}
+\setlength{\belowdisplayskip}{1mm}
+\setlength{\abovedisplayshortskip}{1mm}
+\setlength{\belowdisplayshortskip}{1mm}}
+
+% maths
+\usepackage{xfrac}
+
+\newcommand{\BigO}[1]{\ensuremath{\operatorname{O}(#1)}}
+\newcommand{\BigOe}[1]{\ensuremath{\operatorname{O}_{\epsilon}(#1)}}
+\newcommand{\SmallO}[1]{\ensuremath{\operatorname{o}(#1)}}
+\newcommand{\BigOmega}[1]{\ensuremath{\Omega(#1)}}
+\newcommand{\SmallOmega}[1]{\ensuremath{\omega(#1)}}
+\newcommand{\BigTheta}[1]{\ensuremath{\Theta(#1)}}
+
+\newcommand{\ITLB}[0]{\texorpdfstring{\textsc{ITLB}\xspace}{ITLB\xspace}}
+
+\newcommand\st{\colon\,}
+
+\newcommand{\set}[1]{\mathcal{#1}}
+\newcommand{\enum}[1]{\left\{#1\right\}}
+\newcommand{\group}[1]{\left(#1\right)}
+\newcommand{\ask}[1]{\mathop{#1}^{?}}
+\newcommand{\card}[1]{|#1|}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+
+\def\A{\set{A}}
+\def\B{\set{B}}
+\def\S{\set{S}}
+\def\P{\set{P}}
+\newcommand\R{\mathbb{R}}
+\newcommand\arrangement{\mathcal{A}}
+\def\H{\set{H}}
+\newcommand\Him{H_i^{-}}
+\newcommand\Hiz{H_i^{0}}
+\newcommand\Hip{H_i^{+}}
+\newcommand\His{H_i^{\sigma}}
+\newcommand\Ht{\widetilde{\H}}
+
+\def\M{\set{M}}
+\def\O{\set{O}}
+\newcommand\NH{\set{N}}
+
+\newcommand\pv{\mathit{pv}}
+\newcommand\signset{\enum{-, 0, +}}
+
+
+\newcommand\cell{C}
+\newcommand\simplex{S}
+
+\newcommand\enet{$\epsilon$-net}
+\newcommand\enets{$\epsilon$-nets}
+\newcommand\enetsize{\frac{n^2}{\epsilon} \log^2 \frac{n}{\epsilon}}
+
+% bibliography
+
+\usepackage[numbers]{natbib}
+\bibliographystyle{apalike}
+\usepackage{breakcites}
+
+% kSUM
+
+\newcommand{\ksum}[1][k]{\textsf{#1SUM}}
+\newcommand{\kldt}[1][k]{\textsf{#1LDT}}
+
+\newcommand\twoSUM{\texorpdfstring{\ksum[2]}{2SUM}}
+\newcommand\threeSUM{\texorpdfstring{\ksum[3]}{3SUM}}
+\newcommand\fourSUM{\texorpdfstring{\ksum[4]}{4SUM}}
+\newcommand\twoLDT{\texorpdfstring{\kldt[2]}{2LDT}}
+\newcommand\fourLDT{\texorpdfstring{\kldt[4]}{4LDT}}
+\newcommand\kSUM{\texorpdfstring{\(k\)-\protect\textsf{SUM}}{k-SUM}}
+\newcommand\kLDT{\texorpdfstring{\(k\)-\protect\textsf{LDT}}{k-LDT}}
+
+% SUPI
+
+\newcommand{\SUPI}{\pblm{SUPI}}
+%\newcommand{\supi}{\pblm{Sorting under Partial Information}}
+
+\newcommand{\MUPI}{\pblm{MUPI}}
+%\newcommand{\mupi}{\pblm{Merging under Partial Information}}
+
+\newcommand{\POP}{\pblm{POP}}
+%\newcommand{\pop}{\pblm{Sorting under Partial Information}}
+
+\usepackage{cancel}
+\usepackage{mleftright}
+
