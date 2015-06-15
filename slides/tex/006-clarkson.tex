@@ -12,8 +12,8 @@ These assumptions can be guaranteed using \(d\cdot\LP{}(d,n)\) time
 \pause
 \begin{algo}[(Clarkson's algorithm)]
 \item[input] \((H, z)\)
-\item[1.] Let \(M\) be the empty set.
-\item[2.] While \(H \neq \emptyset\)
+\item[1.] Let \(M = \emptyset\).
+\item[2.] While \(H \neq \emptyset\):
 \item[2.1.] Let \(h \in H\), decide whether \(h\) is redundant w.r.t. \(M\).
 \item[2.2.] If so, \(H \gets H \setminus \enum{h}\).
 \item[2.3.] Otherwise, use \(h\) to find a \(h^* \in H\) such that \(h^*\) is
@@ -33,6 +33,7 @@ nonredundant w.r.t. \(H\). \(H \gets H \setminus \enum{h^*}, M
 
 
 % half-spaces (hyperplane + direction)
+\uput{0}[0](60,13){\(M\)}
 
 \psset{linecolor=black!20!white}
 \psline(0,90)(100,90)
