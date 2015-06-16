@@ -164,8 +164,8 @@ combinatorial structures.
 
 ## References
 
-  - [1] CLARKSON, Kenneth L. More output-sensitive geometric algorithms. In :
+  1. CLARKSON, Kenneth L. More output-sensitive geometric algorithms. In :
 *Foundations of Computer Science, 1994 Proceedings., 35th Annual Symposium on.*
 IEEE, 1994. p. 695-702.
-  - [2] [Lecture: Polyhedral Computation, Spring 2015](http://www-oldurls.inf.ethz.ch/personal/fukudak/lect/pclect/notes2015/PolyComp2015.pdf)
-  - [3] FUKUDA, Komei, GÄRTNER, Bernd, et SZEDLÁK, May. Combinatorial Redundancy Detection. *arXiv preprint arXiv:1412.1241*, 2014.
+  2. [Lecture: Polyhedral Computation, Spring 2015](http://www-oldurls.inf.ethz.ch/personal/fukudak/lect/pclect/notes2015/PolyComp2015.pdf)
+  3. FUKUDA, Komei, GÄRTNER, Bernd, et SZEDLÁK, May. Combinatorial Redundancy Detection. *arXiv preprint arXiv:1412.1241*, 2014.
